@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vishalgouda Patil | AI & Backend Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-logo">VP</div>
+        <ul class="nav-links">
+            <li><a href="#about-philosophy">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="background-glow" id="cursor-glow"></div>
+
+    <main class="scroll-container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Vishalgouda Patil</h1>
+                <h2 class="glitch-text">AI & Backend Engineer</h2>
+                <p class="tagline">
+                    <span id="hero-text"></span>
+                    <span class="cursor" id="hero-cursor">|</span>
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="Vishalgouda_Patil_Resume.pdf" class="btn secondary">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-philosophy" class="section reveal">
+            <div class="combined-content">
+                <div class="sub-block">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-text">
+                        <span id="about-text"></span>
+                        <span class="cursor" id="about-cursor" style="display:none;">|</span>
+                    </p>
+                </div>
+                
+                <div class="sub-block">
+                    <h2 class="section-title">Engineering Philosophy</h2>
+                    <p class="section-text">
+                        <span id="philosophy-text"></span>
+                        <span class="cursor" id="philosophy-cursor" style="display:none;">|</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section reveal">
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card fade-item">
+                    <h3>AI & LLM Systems</h3>
+                    <ul>
+                        <li>Gemini API Integration</li>
+                        <li>Prompt Engineering</li>
+                        <li>Structured JSON Validation</li>
+                        <li>AI Streaming (SSE)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card fade-item">
+                    <h3>Backend Engineering</h3>
+                    <ul>
+                        <li>Flask & FastAPI</li>
+                        <li>SQLAlchemy ORM</li>
+                        <li>Authentication Systems</li>
+                        <li>REST API Design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card fade-item">
+                    <h3>Architecture & Security</h3>
+                    <ul>
+                        <li>Risk Scoring Engines</li>
+                        <li>3-Sigma Anomaly Detection</li>
+                        <li>Rate Limiting</li>
+                        <li>Secure Cookie Config</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card fade-item">
+                    <h3>Deployment</h3>
+                    <ul>
+                        <li>Railway Deployment</li>
+                        <li>Environment Variables</li>
+                        <li>Production Debugging</li>
+                        <li>CORS Configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section reveal">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-card fade-item">
+                <div class="project-tags">
+                    <span>Python</span><span>Gemini API</span><span>SSE</span>
+                </div>
+                <div class="project-image" style="background-image: url('PrepAura_AI.png');"></div>
+                <h3>PrepAura AI</h3>
+                <p>
+                    Multi-round AI interview system integrating LLM reasoning,
+                    real-time coding evaluation, and behavioral analytics.
+                </p>
+            </div>
+
+            <div class="project-card fade-item">
+                <div class="project-tags">
+                    <span>FastAPI</span><span>Security</span><span>ML</span>
+                </div>
+                <div class="project-image" style="background-image: url('GuardPay_Architecture.png');"></div>
+                <h3>GuardPay</h3>
+                <p>
+                    Backend fraud detection engine implementing layered risk scoring,
+                    adaptive thresholds, and secure transaction workflows.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="section reveal contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-box">
+                <p>Email: <a href="mailto:vishalgouda486@gmail.com">vishalgouda486@gmail.com</a></p>
+                <p>Location: Belagavi, Karnataka, India</p>
+        
+                <div class="social-links" style="margin-top: 30px;">
+                    <a href="https://github.com/vishalgouda486" target="_blank" class="btn secondary">GitHub</a>
+                    <a href="https://linkedin.com/in/vishalgouda-patil" target="_blank" class="btn secondary">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0c0c10;
+    color: #eaeaea;
+    line-height: 1.6;
+    overflow: hidden; 
+}
+
+/* PROGRESS BAR */
+.progress-container {
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+}
+
+.progress-bar {
+    height: 3px;
+    background: #4da3ff;
+    width: 0%;
+    box-shadow: 0 0 10px #4da3ff;
+}
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -2;
+}
+
+/* MOUSE GLOW */
+.background-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,123,255,0.15), transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+    transition: transform 0.1s ease-out;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(12,12,16,0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #4da3ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4da3ff;
+}
+
+.section, .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
+}
+
+/* ABOUT & PHILOSOPHY SPACING FIX */
+.combined-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: left; /* Aligns headings and text to the left like your screenshot */
+    max-width: 850px;
+}
+
+.sub-block {
+    margin-bottom: 60px; /* This creates the gap you asked for */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #4da3ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: default;
+}
+
+.section-text {
+    color: #b0b0b0;
+    font-size: 1.05rem;
+    min-height: 4rem; 
+    line-height: 1.8;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.glitch-text {
+    font-size: 1.4rem;
+    color: #4da3ff;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.tagline {
+    margin: 20px 0 40px 0;
+    font-size: 1.1rem;
+    color: #b5b5b5;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.primary { background: #4da3ff; color: #000; }
+.secondary { border: 1px solid #4da3ff; color: #4da3ff; }
+.primary:hover { box-shadow: 0 0 20px rgba(77, 163, 255, 0.4); }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.02);
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    border-color: #4da3ff;
+    background: rgba(77,163,255,0.05);
+}
+
+.skill-card h3 { color: #fff; margin-bottom: 15px; font-size: 1rem; }
+.skill-card ul { list-style: none; color: #888; font-size: 0.85rem; }
+.skill-card li::before { content: "// "; color: #4da3ff; }
+
+.project-card {
+    background: rgba(255,255,255,0.02);
+    padding: 30px;
+    width: 100%;
+    max-width: 850px;
+    margin: 10px 0;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    transition: 0.4s;
+    text-align: left;
+}
+
+.project-tags {
+    margin-bottom: 15px;
+}
+
+.project-tags span {
+    font-size: 0.7rem;
+    color: #4da3ff;
+    border: 1px solid rgba(77,163,255,0.3);
+    padding: 3px 8px;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+.project-card:hover {
+    border-color: #4da3ff;
+    transform: translateX(10px);
+}
+
+.project-image {
+    width: 100%;
+    height: 350px; /* Making it taller prevents aggressive side-cropping */
+    background-size: cover;
+    background-position: top; /* Keeps the title of your diagrams visible */
+    border-radius: 8px;
+    border: 1px solid rgba(77, 163, 255, 0.2);
+}
+
+.reveal, .fade-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.reveal.active, .fade-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cursor { color: #4da3ff; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.contact-box a {
+    color: #4da3ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-links .btn {
+    margin: 0; /* Resets margins for better alignment in the flex box */
+    min-width: 120px;
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 3000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(12, 12, 16, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: #16161d;
+    margin: 5% auto;
+    padding: 40px;
+    border: 1px solid #4da3ff;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.2);
+    animation: modalSlide 0.4s ease;
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: #4da3ff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-body h2 { color: #4da3ff; margin-bottom: 20px; }
+.modal-body h4 { color: #fff; margin: 20px 0 10px 0; }
+.modal-body p { color: #b0b0b0; font-size: 0.95rem; margin-bottom: 15px; }
+.modal-tech-list { color: #4da3ff; font-family: monospace; font-size: 0.9rem; }
+
+/* --- PROJECT CARD HINT --- */
+.project-card::after {
+    content: "Click for Technical Details ▹";
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 0.75rem;
+    color: #4da3ff;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* --- MODAL TEST BUTTON --- */
+.modal-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-test {
+    background: transparent;
+    border: 1px solid #4da3ff;
+    color: #4da3ff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-test:hover {
+    background: #4da3ff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(77, 163, 255, 0.4);
+}
+
