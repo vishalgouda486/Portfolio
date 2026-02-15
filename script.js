@@ -140,7 +140,7 @@ const projectDetails = {
             "Escrow-based payment release system with 'Aura Score' reputation rewards."
         ],
         tech: "Python, FastAPI, SQLAlchemy, SQLite, CryptContext (Bcrypt)",
-        link: "https://github.com/vishalgouda486/GuardPay"
+        link: "https://guard-pay-red.vercel.app/"
     }
 };
 
@@ -184,4 +184,5 @@ window.onclick = (event) => {
         modal.style.display = "none";
         scrollContainer.style.overflowY = "scroll";
     }
+
 };
